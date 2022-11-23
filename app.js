@@ -1,19 +1,14 @@
 // write the function isAnagram
 var isAnagram = function (test, original) {
-
-    if (test.length == original.length) {
-        for (var i = 0; i < test.length; i++) {
-            if (test.includes(original[i])) {
-                return true;
-            }
-        }
-        // return true;
+    let first = test
+    first = first.toLowerCase().split('').sort().join('');
+    let second = original;
+    second = second.toLowerCase().split('').sort().join('');
+    if (first == second) {
+        return true;
     } else {
         return false;
     }
-    // if (test.includes('t')) {
-    //     return true;
-    // }
 };
 
 console.log(isAnagram("foefet", "toffee")); // true
